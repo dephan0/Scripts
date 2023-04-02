@@ -1,5 +1,5 @@
 #!/bin/sh
-# My standard tmux setup
+# My standard 3-window tmux setup
 
 tmux new-session -d -s main
 
@@ -16,4 +16,6 @@ tmux new-window -t main:2 -n bash 'cd ~; bash -i'
 # window no. 3 - bash
 tmux new-window -t main:3 -n bash 'cd ~; bash -i'
 
+
+tmux select-windows -t main:1  # select ranger
 tmux attach-session -t main
