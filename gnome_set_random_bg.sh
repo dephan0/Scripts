@@ -13,9 +13,8 @@ get_new_random () {
 																					 # Won't work if already_used is tampered with.
 
 	if [ -z "$not_used" ]; then  # Image base exhausted. Everything in already_used
-		local random="$(cat "$ALREADY_USED" | head --lines=-1 | shuf -n1)"  # get a random line from already_used (which now contains 
-																			# every picture) but exclude the last one (to avoid 
-																			# repeating backgrounds)
+		local random="$(cat "$ALREADY_USED" | head --lines=-1 | shuf -n1)"  # get a random line but exclude the last one (to avoid 
+																			# backgrounds repeating right after themselves)
 		echo $random > $ALREADY_USED  # reset the already_used file
 	else
 		local random="$(echo "$not_used" | shuf -n1)"

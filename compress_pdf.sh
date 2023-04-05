@@ -42,13 +42,13 @@ while getopts ':l:' option; do
 	esac
 done
 
-[[ -z "$LEVEL" ]] && LEVEL=2 # default level is 2
+[[ -z "$LEVEL" ]] && LEVEL=2  # default level is 2
 
-shift $((OPTIND - 1)) # shift arguments past the options
+shift $((OPTIND - 1))  # shift arguments past the options
 
 if [[ $# -eq 0 ]]; then
 	info_exit
-elif [[ $# -eq 1 ]]; then # If there's only one argument, create a temporary file
+elif [[ $# -eq 1 ]]; then  # If there's only one argument, create a temporary file
 	compress_pdf "$LEVEL" "$1" tmp
 	mv tmp "$1"
 else
