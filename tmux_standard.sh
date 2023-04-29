@@ -10,11 +10,11 @@ tmux send-keys -t main:1 ENTER
 tmux rename-window -t main:1 'ranger'
 tmux send-keys -t main:1 'ranger' ENTER
 
-# window no. 2 - bash
-tmux new-window -t main:2 -n bash 'cd ~; bash -i'
+# window no. 2 - shell
+tmux new-window -t main:2 -n "${SHELL##*/}"
 
-# window no. 3 - bash
-tmux new-window -t main:3 -n bash 'cd ~; bash -i'
+# window no. 3 - shell
+tmux new-window -t main:3 -n "${SHELL##*/}"
 
 
 tmux select-windows -t main:1  # select ranger
