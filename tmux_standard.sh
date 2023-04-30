@@ -17,5 +17,5 @@ tmux new-window -t main:2 -n "${SHELL##*/}"
 tmux new-window -t main:3 -n "${SHELL##*/}"
 
 
-tmux select-windows -t main:1  # select ranger
+tmux select-window -t main:1  # select ranger
 tmux attach-session -t main
