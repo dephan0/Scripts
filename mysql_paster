@@ -1,0 +1,13 @@
+#!/bin/bash
+# Executes an SQL query stored in the clipboard and prints the output to stdout
+
+command="$(pbpaste)"
+
+{
+	output="$(mysql world --table --execute "$command")"
+	lines="$(echo "$output" | wc -l)"
+
+	echo -e "$command\n"
+	echo "$output"
+	echo "$((lines - 4)) rows"
+}
