@@ -7,8 +7,8 @@ tmux new-session -d -s main
 tmux send-keys -t main:1 ENTER
 
 # window no. 1 - ranger
-tmux rename-window -t main:1 'ranger'
-tmux send-keys -t main:1 'ranger' ENTER
+tmux rename-window -t main:1 'lf'
+tmux send-keys -t main:1 'lf' ENTER
 
 # window no. 2 - shell
 tmux new-window -t main:2 -n "${SHELL##*/}"
